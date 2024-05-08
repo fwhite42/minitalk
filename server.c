@@ -6,22 +6,17 @@
 /*   By: fwhite42 <FUCK THE NORM>                          (  o  )            */
 /*                                                       _/'-----'\_          */
 /*   Created: 2024/05/02 03:35:11 by fwhite42          \\ \\     // //        */
-/*   Updated: 2024/05/02 03:35:13 by fwhite42           _)/_\---/_\(_         */
+/*   Updated: 2024/05/08 14:25:28 by fwhite42           _)/_\---/_\(_         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"signal.h"
-#include"libftprintf.h"
-#include"liberror.h"
-#include<stddef.h>
 #include"libserver.h"
-#include<unistd.h>
 
 t_server	g_server;
 
 int	main(void)
 {
 	server_config();
-	server_start();
+	server_start(1);
 	return (0);
 }

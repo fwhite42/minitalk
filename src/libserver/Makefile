@@ -6,7 +6,8 @@ define METHODS
 	verify_pid		\
 	config			\
 	handle			\
-	start
+	start			\
+	destroy
 endef
 
 include ../Makefile
