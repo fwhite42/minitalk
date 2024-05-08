@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                                            */
-/*   server_destroy.c                                        4 2              */
+/*   libclient.h                                             4 2              */
 /*                                                        (@)-=-(@)           */
 /*   By: fwhite42 <FUCK THE NORM>                          (  o  )            */
 /*                                                       _/'-----'\_          */
-/*   Created: 2024/05/08 14:46:54 by fwhite42          \\ \\     // //        */
-/*   Updated: 2024/05/08 14:46:55 by fwhite42           _)/_\---/_\(_         */
+/*   Created: 2024/05/02 03:33:21 by fwhite42          \\ \\     // //        */
+/*   Updated: 2024/05/08 11:25:58 by fwhite42           _)/_\---/_\(_         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include"libserver.h"
+#ifndef LIBCLIENT_H
+# define LIBCLIENT_H
+# include<signal.h>
 
-extern t_server	g_server;
-
-void	server_destroy(void)
+typedef struct s_client
 {
-	int	pid;
+	pid_t	pid;
+	int		zero;
+	int		one;
+}	t_client;
 
-	pid = 0;
-	while (pid < MAX_CLIENTS)
-		free(g_server.msg[pid++]);
-}
+void	client_config(t_client *self, int ac, char **av);
+void	client_sendbit(t_client *self, int b);
+void	client_sendchar(t_client *self, char c);
+void	client_sendstr(t_client *self, char *s);
+#endif

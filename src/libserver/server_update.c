@@ -6,7 +6,7 @@
 /*   By: fwhite42 <FUCK THE NORM>                          (  o  )            */
 /*                                                       _/'-----'\_          */
 /*   Created: 2024/05/02 03:21:35 by fwhite42          \\ \\     // //        */
-/*   Updated: 2024/05/08 14:18:44 by fwhite42           _)/_\---/_\(_         */
+/*   Updated: 2024/05/08 14:45:17 by fwhite42           _)/_\---/_\(_         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	update_as_client(pid_t pid)
 	if (ft_strncmp(msg, g_server.msg[pid], (size_t) msg_len))
 		return ;
 	ft_printf("Server (%i) confirmed the reception your data.\n", pid);
-//	server_destroy();
+	server_destroy();
 	exit(0);
 	return ;
 }

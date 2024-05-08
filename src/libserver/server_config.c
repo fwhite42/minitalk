@@ -6,7 +6,7 @@
 /*   By: fwhite42 <FUCK THE NORM>                          (  o  )            */
 /*                                                       _/'-----'\_          */
 /*   Created: 2024/05/02 03:22:10 by fwhite42          \\ \\     // //        */
-/*   Updated: 2024/05/08 14:40:27 by fwhite42           _)/_\---/_\(_         */
+/*   Updated: 2024/05/08 14:46:43 by fwhite42           _)/_\---/_\(_         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ extern t_server	g_server;
 
 static void	init_msg_arrays(void)
 {
-	int					pid;
-	
+	int	pid;
+
 	pid = 0;
 	while (pid < MAX_CLIENTS)
 	{
@@ -43,7 +43,6 @@ static void	set_main_action(void)
 	sigaddset(&action.sa_mask, SIGUSR2);
 	sigaction(SIGUSR1, &action, 0);
 	sigaction(SIGUSR2, &action, 0);
-
 }
 
 static void	on_ctrl_c(int signo)
@@ -68,7 +67,6 @@ static void	set_ctrl_c_action(void)
 
 void	server_config(void)
 {
-
 	ft_bzero(&g_server, sizeof(t_server));
 	init_msg_arrays();
 	set_main_action();
