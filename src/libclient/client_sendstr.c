@@ -6,12 +6,11 @@
 /*   By: fwhite42 <FUCK THE NORM>                          (  o  )            */
 /*                                                       _/'-----'\_          */
 /*   Created: 2024/05/02 03:32:57 by fwhite42          \\ \\     // //        */
-/*   Updated: 2024/05/08 11:18:31 by fwhite42           _)/_\---/_\(_         */
+/*   Updated: 2024/05/12 01:35:09 by fwhite42           _)/_\---/_\(_         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libclient.h"
-#include"libftprintf.h"
 
 void	client_sendstr(t_client *self, char *s)
 {

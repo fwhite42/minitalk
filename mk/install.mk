@@ -15,9 +15,6 @@ LIBRARIES		:= $(RARIES:%=lib%)
 LIBRARY_FILES	:= $(LIBRARIES:%=$(libdir)/%.a)
 HEADERS			:= $(LIBRARIES:%=$(includedir)/%.h)
 
-ifdef reverse
-endif
-
 .SECONDEXPANSION:
 # Headers
 $(HEADERS):$(includedir)/%.h	: $(srcdir)/$$*/$$*.h $(includedir)
@@ -27,9 +24,10 @@ $(HEADERS):$(includedir)/%.h	: $(srcdir)/$$*/$$*.h $(includedir)
 headers: $(HEADERS)
 
 # Archives
-$(LIBRARY_FILES):$(libdir)/%.a: $(srcdir)/%/Makefile $(libdir) $(HEADERS)
-	$(MAKE) -C $(dir $<) includedir=$(includedir)
+$(LIBRARY_FILES):$(libdir)/%.a: $(srcdir)/% $(HEADERS) | $(libdir)
+	$(MAKE) -C $(dir $</Makefile) includedir=$(includedir)
 	$(INSTALL_DATA) $(srcdir)/$*/$*.a $(libdir)/
+
 
 .PHONY: libraries
 libraries: $(LIBRARY_FILES)

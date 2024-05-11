@@ -6,7 +6,7 @@
 /*   By: fwhite42 <FUCK THE NORM>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 07:23:27 by fwhite42          #+#    #+#             */
-/*   Updated: 2024/05/08 14:17:21 by fwhite42           _)/_\---/_\(_         */
+/*   Updated: 2024/05/12 01:50:54 by fwhite42           _)/_\---/_\(_         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 
 # define MAX_CLIENTS				4194304
 # define STD_MSG_CAPACITY			256
-# define SERVER_CONFIRMATION_MSG	"Oh s**t is 4:20 again!\n"
-
+# define ACK_MSG	"Server (%i) confirmed the reception of your data.\n"
 typedef struct s_server	t_server;
 
 struct s_server
